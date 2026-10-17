@@ -270,4 +270,19 @@
   .about-founder-grid {
     grid-template-columns: 1fr;
   }
+
+  .about-company-card dl div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-product-card--wide {
+    grid-column: auto;
+  }
 }

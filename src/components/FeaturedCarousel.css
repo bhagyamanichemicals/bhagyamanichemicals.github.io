@@ -100,3 +100,32 @@
   flex: 0 0 280px; 
   box-sizing: border-box;
 }
+
+@media (max-width: 640px) {
+  .section-header-wrap {
+    padding: 0 0.25rem;
+  }
+
+  .section-header-wrap .section-title-wrap span {
+    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
+  }
+
+  .carousel-track-wrapper {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .ctrl-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .prev-btn {
+    left: 4px;
+  }
+
+  .next-btn {
+    right: 4px;
+  }
+}
