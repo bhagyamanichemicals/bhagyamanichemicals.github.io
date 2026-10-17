@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Featured Carousel Styles (Fully Visible Edge Buttons Fix)
+   ========================================================================== */
+
+/* 1. Main outer section - No side padding needed here anymore */
+.featured-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.section-header-wrap {
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem; /* Matches the padding of the carousel container below */
+}
+
+.section-title-wrap span {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* 
+   2. CRITICAL FIX: The Track Wrapper 
+   We add 60px of side padding so the buttons fit completely inside this container. 
+   We keep overflow: visible so they never get cut in half.
+*/
+.carousel-track-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 60px; /* 60px of safety padding on left and right for the buttons */
+  box-sizing: border-box;
+}
+
+/* 
+   3. Absolute Control Buttons 
+   They are placed exactly at 15px from the edge. Because the wrapper has 
+   60px of padding, they will appear floating in a dedicated clear zone!
+*/
+.ctrl-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  background-color: var(--bgPure);
+  border: 1px solid var(--textMain);
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Placed cleanly inside the 60px padding zone */
+.prev-btn {
+  left: 10px; 
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.ctrl-btn:hover {
+  background-color: var(--primary);
+  color: var(--bgPure);
+  border-color: var(--primary);
+}
+
+/* 
+   4. The Sliding Content Ribbon 
+   This is the ONLY element that handles hiding overflow and scroll tracking.
+*/
+.product-grid.carousel-mode {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  /* scroll-behavior: smooth; <-- REMOVE OR COMMENT THIS LINE OUT */
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-grid.carousel-mode::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* 5. Fixed-width configuration for cards inside the track */
+.product-grid.carousel-mode .product-card {
+  flex: 0 0 280px; 
+  box-sizing: border-box;
+}
