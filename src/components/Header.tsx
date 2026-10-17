@@ -8,6 +8,7 @@ function Header() {
     <header className="topbar">
         <a className="brand" href={buildSitePath('/')} aria-label="Bhagyamani Chemicals home">
           <img src={logoImage} alt="Bhagyamani Chemicals" />
+          <span className="brand-name">Bhagyamani</span>
         </a>
 
         <nav className="main-nav" aria-label="Main navigation">
